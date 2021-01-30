@@ -1,2 +1,2 @@
 # prilltech
-www.prill.tech/
+http://www.prill.tech/
