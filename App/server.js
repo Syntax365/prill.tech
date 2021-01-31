@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 app.get('/flower', (req, res) => {
   res.json({
     name: 'Dandelion',
-    colour: 'Blue-ish'
+    color: 'Blue-ish'
   });
 });
 app.listen(PORT, () => {
