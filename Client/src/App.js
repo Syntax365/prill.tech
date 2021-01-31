@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>{this.state.flower.name}</h1>
-        <p>{this.state.flower.colour}</p>
+        <p>{this.state.flower.color}</p>
       </div>
     );
   }
