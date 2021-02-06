@@ -1,3 +1,1 @@
-# prill.tech
-
 # Testing
