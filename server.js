@@ -1,7 +1,7 @@
 import path from 'path';
 import express from 'express';
 
-const PORT = process.env.HTTP_PORT || 4001;
+const PORT = process.env.HTTP_PORT || 8081;
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'Client', 'build')));
@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 app.get('/flower', (req, res) => {
   res.json({
     name: 'Dandelion',
-    colour: 'Blue-ish'
+    color: 'Blue-ish'
   });
 });
 
