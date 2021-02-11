@@ -7,13 +7,13 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'Client', 'build')));
 
 app.get('/', (req, res) => {
-  res.send('just gonna send it');
+  res.send('API default route');
 });
 
-app.get('/flower', (req, res) => {
+app.get('/test', (req, res) => {
   res.json({
-    name: 'Hellscar',
-    color: 'Ankle pics 1 gold'
+    fullName: 'Tyler Prill',
+    integrationTest: 'Success!'
   });
 });
 

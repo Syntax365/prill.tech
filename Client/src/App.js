@@ -4,24 +4,24 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      flower: {}
+      testResponse: {}
     }
-    this.getFlower();
+    this.getTestData();
   }
-  getFlower() {
-    fetch('/flower')
+  getTestData() {
+    fetch('/test')
       .then(response => response.json())
       .then(data => {
         this.setState({
-          flower: data
+          testResponse: data
         });
       });
   }
   render() {
     return (
       <div className="App">
-        <h1>{this.state.flower.name}</h1>
-        <p>{this.state.flower.color}</p>
+        <h1>{this.state.testResponse.fullName}</h1>
+        <p>Test Response: {this.state.testResponse.integrationTest}</p>
       </div>
     );
   }

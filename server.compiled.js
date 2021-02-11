@@ -10,12 +10,12 @@ var PORT = process.env.HTTP_PORT || 8080;
 var app = (0, _express["default"])();
 app.use(_express["default"]["static"](_path["default"].join(__dirname, 'Client', 'build')));
 app.get('/', function (req, res) {
-  res.send('just gonna send it');
+  res.send('API default route');
 });
-app.get('/flower', function (req, res) {
+app.get('/test', function (req, res) {
   res.json({
-    name: 'Hellscar',
-    color: 'Ankle pics 1 gold'
+    fullName: 'Tyler Prill',
+    integrationTest: 'Success!'
   });
 });
 app.listen(PORT, function () {
