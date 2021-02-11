@@ -12,8 +12,8 @@ app.get('/', (req, res) => {
 
 app.get('/flower', (req, res) => {
   res.json({
-    name: 'Dandelion',
-    color: 'Blue-ish'
+    name: 'Hellscar',
+    color: 'Ankle pics 1 gold'
   });
 });
 
