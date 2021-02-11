@@ -14,8 +14,8 @@ app.get('/', function (req, res) {
 });
 app.get('/flower', function (req, res) {
   res.json({
-    name: 'Dandelion',
-    color: 'Blue-ish'
+    name: 'Hellscar',
+    color: 'Ankle pics 1 gold'
   });
 });
 app.listen(PORT, function () {
