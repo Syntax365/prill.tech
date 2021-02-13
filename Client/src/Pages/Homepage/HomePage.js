@@ -16,7 +16,7 @@ class HomePage extends Component {
   }
 
   getTestData() {
-    fetch("/test")
+    fetch("/api/test")
       .then((response) => response.json())
       .then((data) => {
         this.setState({

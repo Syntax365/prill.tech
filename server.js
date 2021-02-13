@@ -6,11 +6,11 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "Client", "build")));
 
-app.get("/", (req, res) => {
+app.get("/api/", (req, res) => {
   res.send("API default route");
 });
 
-app.get("/test", (req, res) => {
+app.get("/api/test", (req, res) => {
   res.json({
     fullName: "Tyler Prill",
     integrationTest: "Success!",

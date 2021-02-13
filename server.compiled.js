@@ -9,10 +9,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var PORT = process.env.HTTP_PORT || 8080;
 var app = (0, _express["default"])();
 app.use(_express["default"]["static"](_path["default"].join(__dirname, "Client", "build")));
-app.get("/", function (req, res) {
+app.get("/api/", function (req, res) {
   res.send("API default route");
 });
-app.get("/test", function (req, res) {
+app.get("/api/test", function (req, res) {
   res.json({
     fullName: "Tyler Prill",
     integrationTest: "Success!"
