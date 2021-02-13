@@ -10,15 +10,16 @@ app.get("/", (req, res) => {
   res.send("API default route");
 });
 
-app.get("/testpage", (req, res) => {
-  res.send("API testpage route");
-});
-
 app.get("/test", (req, res) => {
   res.json({
     fullName: "Tyler Prill",
     integrationTest: "Success!",
   });
+});
+
+// Handles any requests that don't match the ones above
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
 app.listen(PORT, () => {
