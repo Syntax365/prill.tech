@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 
+import "./Button.css";
+
 class Component1 extends Component {
   render() {
     return (
-      <div>
-        <h3>This is a Component1 component.</h3>
-      </div>
+      <button>
+        <div>This is a Buttons component.</div>
+      </button>
     );
   }
 }
 
 export default Component1;
+s;
