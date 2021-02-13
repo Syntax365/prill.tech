@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Component1 from "../../Components/Component1.jsx";
 
-import "./TestPage.css";
+import "./Testpage.css";
 
 class TestPage extends Component {
   constructor(props) {
