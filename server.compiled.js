@@ -20,7 +20,7 @@ app.get("/test", function (req, res) {
 }); // Handles any requests that don't match the ones above
 
 app.get("*", function (req, res) {
-  res.sendFile(_path["default"].join(__dirname + "/client/build/index.html"));
+  res.sendFile(_path["default"].join(__dirname + "/Client/build/index.html"));
 });
 app.listen(PORT, function () {
   console.log("Server listening at port ".concat(PORT, "."));

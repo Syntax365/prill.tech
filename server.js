@@ -19,7 +19,7 @@ app.get("/test", (req, res) => {
 
 // Handles any requests that don't match the ones above
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  res.sendFile(path.join(__dirname + "/Client/build/index.html"));
 });
 
 app.listen(PORT, () => {
