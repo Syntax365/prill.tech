@@ -12,14 +12,15 @@ app.use(_express["default"]["static"](_path["default"].join(__dirname, "Client",
 app.get("/", function (req, res) {
   res.send("API default route");
 });
-app.get("/testpage", function (req, res) {
-  res.send("API default route");
-});
 app.get("/test", function (req, res) {
   res.json({
     fullName: "Tyler Prill",
     integrationTest: "Success!"
   });
+}); // Handles any requests that don't match the ones above
+
+app.get("*", function (req, res) {
+  res.sendFile(_path["default"].join(__dirname + "/client/build/index.html"));
 });
 app.listen(PORT, function () {
   console.log("Server listening at port ".concat(PORT, "."));
