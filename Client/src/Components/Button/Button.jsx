@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Link as ReactRouterLink, NavLink } from "react-router-dom";
+import { Link as NavLink } from "react-router-dom";
 
 import "./Button.css";
 
