@@ -4,7 +4,7 @@ class Component1 extends Component {
   render() {
     return (
       <div>
-        <h3>This is a Component1 component.</h3>
+        <h3>Homepage Hero</h3>
       </div>
     );
   }

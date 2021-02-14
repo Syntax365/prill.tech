@@ -1,37 +1,39 @@
 import React, { Component } from "react";
 
-import Component1 from "../../Components/Component1.jsx";
+import HomepageHero from "./HomepageHero.jsx";
 import Button from "../../Components/Button/Button.jsx";
 
 import "./Homepage.css";
 
 class HomePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      testResponse: {},
-    };
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     testResponse: {},
+  //   };
+  // }
 
-    this.getTestData();
-  }
+  // componentDidMount() {
+  //   this.getTestData();
+  // }
 
-  getTestData() {
-    fetch("/api/test")
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({
-          testResponse: data,
-        });
-      });
-  }
+  // getTestData() {
+  //   fetch("/api/test")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       this.setState({
+  //         testResponse: data,
+  //       });
+  //     });
+  // }
 
   render() {
     return (
       <div className="App">
-        <h1>{this.state.testResponse.fullName}</h1>
-        <p>Test Response: {this.state.testResponse.integrationTest}</p>
-        <Component1 />
-        <Button />
+        <HomepageHero />
+        <Button type={"Link"} to={"/testpage"} style={{ width: "400px" }}>
+          Click to go to TestPage
+        </Button>
       </div>
     );
   }

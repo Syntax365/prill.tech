@@ -1,14 +1,29 @@
 import React, { Component } from "react";
 
+import { Link as ReactRouterLink, NavLink } from "react-router-dom";
+
 import "./Button.css";
 
 class Button extends Component {
   render() {
-    return (
-      <button>
-        <div>This is a Buttons componentz.</div>
-      </button>
-    );
+    const {
+      type = "",
+      to,
+      children,
+      className = "",
+      style = "",
+      ...otherProps
+    } = this.props;
+
+    if (type === "Link") {
+      return (
+        <NavLink to={to} style={style} className={className}>
+          {children}
+        </NavLink>
+      );
+    }
+
+    return <button style={style}>{children}</button>;
   }
 }
 

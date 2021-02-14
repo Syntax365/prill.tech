@@ -8,7 +8,6 @@ class App extends Component {
   render() {
     return (
       <div id="App">
-        This is the App Container
         <Router>
           <Route path="/" exact component={Homepage} />
           <Route path="/testpage" component={Testpage} />
