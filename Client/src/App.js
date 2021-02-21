@@ -1,29 +1,20 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import Homepage from "./Pages/Homepage/HomePage.js";
+import Testpage from "./Pages/Testpage/Testpage.js";
+
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      flower: {}
-    }
-    this.getFlower();
-  }
-  getFlower() {
-    fetch('/flower')
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          flower: data
-        });
-      });
-  }
   render() {
     return (
-      <div className="App">
-        <h1>{this.state.flower.name}</h1>
-        <p>{this.state.flower.color}</p>
+      <div id="App">
+        <Router>
+          <Route path="/" exact component={Homepage} />
+          <Route path="/testpage" component={Testpage} />
+        </Router>
       </div>
     );
   }
 }
+
 export default App;

@@ -1,20 +1,25 @@
-import path from 'path';
-import express from 'express';
+import path from "path";
+import express from "express";
 
-const PORT = process.env.HTTP_PORT || 4001;
+const PORT = process.env.HTTP_PORT || 8080;
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'Client', 'build')));
+app.use(express.static(path.join(__dirname, "Client", "build")));
 
-app.get('/', (req, res) => {
-  res.send('just gonna send it');
+app.get("/api/", (req, res) => {
+  res.send("API default route");
 });
 
-app.get('/flower', (req, res) => {
+app.get("/api/test", (req, res) => {
   res.json({
-    name: 'Dandelion',
-    colour: 'Blue-ish'
+    fullName: "Tyler Prill",
+    integrationTest: "Success!",
   });
+});
+
+// Handles any requests that don't match the ones above
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/Client/build/index.html"));
 });
 
 app.listen(PORT, () => {

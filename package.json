@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec ./node_modules/.bin/babel-node server.js --ignore client"
+    "start": "node server.compiled.js",
+    "build": "babel server.js --out-file server.compiled.js",
+    "local": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nginx": "^0.0.0",
+    "react-router": "^5.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.13",
