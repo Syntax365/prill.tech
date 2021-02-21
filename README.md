@@ -2,4 +2,20 @@
 
 http://www.prill.tech/
 
-# Testing First Check Ins
+## Dependencies:
+
+### Git
+
+https://git-scm.com/
+
+### NodeJS
+
+https://nodejs.org/en/
+
+### Express
+
+npm install express --save
+
+### React
+
+npm install react-scripts --save
