@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
-import HomepageHero from "./HomepageHero.jsx";
-import Button from "../../Components/Button/Button.jsx";
+import HomepageHero from "./Hero/HomepageHero.jsx";
 
 import "./Homepage.css";
 
@@ -31,9 +30,6 @@ class HomePage extends Component {
     return (
       <div className="App">
         <HomepageHero />
-        <Button type={"Link"} to={"/testpage"} style={{ width: "400px" }}>
-          Click to go to TestPage
-        </Button>
       </div>
     );
   }
