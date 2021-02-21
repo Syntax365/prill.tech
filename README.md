@@ -4,6 +4,8 @@ http://www.prill.tech/
 
 ## Dependencies:
 
+To Hook up a new device, you will need the following:
+
 ### Git
 
 https://git-scm.com/
