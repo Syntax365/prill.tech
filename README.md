@@ -1,6 +1,8 @@
 # prilltech
 
-http://www.prill.tech/
+Current: http://prilltech-env.eba-wtvermmg.us-east-2.elasticbeanstalk.com/
+
+TODO: http://www.prill.tech/
 
 ## Dependencies:
 
@@ -21,3 +23,4 @@ npm install express --save
 ### React
 
 npm install react-scripts --save
+
