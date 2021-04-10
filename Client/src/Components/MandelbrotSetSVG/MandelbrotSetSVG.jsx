@@ -37,7 +37,7 @@ export default (props) => {
         }
 
         var bright = p5.map(n, 0, maxiterations, 0, 1);
-        bright = p5.map(p5.sqrt(bright), 0, 1, 0, 255);
+        bright = p5.map(p5.sqrt(bright), 0, 1, 0.52, 255);
 
         if (n == maxiterations) {
           bright = 0;
@@ -45,8 +45,8 @@ export default (props) => {
 
         var pix = (x + y * width) * 4;
         p5.pixels[pix + 0] = bright;
-        p5.pixels[pix + 1] = 255;
-        p5.pixels[pix + 2] = 255;
+        p5.pixels[pix + 1] = 0;
+        p5.pixels[pix + 2] = 10;
         p5.pixels[pix + 3] = 255;
       }
     }
