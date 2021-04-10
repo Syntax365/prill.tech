@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
 import Button from "../../Components/Button/Button";
-import SVG from "../../Components/TestSVG/TestSVG";
+import TestSVG from "../../Components/TestSVG/TestSVG";
+import MandelbrotSetSVG from "../../Components/MandelbrotSetSVG/MandelbrotSetSVG";
 
 import "./Testpage.css";
 
@@ -15,9 +16,11 @@ class TestPage extends Component {
           Click to go to TestPage
         </Button>
         <div id="test-svg container">
-          <div style={{ float: "center", border: "solid" }}>
-            <SVG width={window.innerWidth} />
+          <div style={{ float: "center", width: "100%" }}>
+            <MandelbrotSetSVG width={600} />
           </div>
+          <div style={{ float: "center" }}></div>
+          <div></div>
         </div>
       </div>
     );
