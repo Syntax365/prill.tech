@@ -24,3 +24,6 @@ npm install express --save
 
 npm install react-scripts --save
 
+### P5.js
+
+npm i --save react-p5
