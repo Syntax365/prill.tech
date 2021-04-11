@@ -6,8 +6,8 @@ export default (props) => {
   const setup = (p5, canvasParentRef) => {
     p5.createCanvas(props.width, props.height).parent(canvasParentRef);
     p5.pixelDensity(1);
-    //p5.noLoop();
-    console.log('Setting up Mandelbrot Set')
+    p5.noLoop();
+    console.log("Setting up Mandelbrot Set");
   };
 
   const draw = (p5) => {
@@ -37,8 +37,8 @@ export default (props) => {
           n++;
         }
 
-        var bright = p5.map(n, 0, maxiterations, 0, 1);
-        bright = p5.map(p5.sqrt(bright), 0, 1, 0, 255);
+        var bright = p5.map(n, 0, maxiterations, 0, 0.75);
+        bright = p5.map(p5.sqrt(bright), 0, 0.5, 0, 255);
 
         if (n == maxiterations) {
           bright = 0;
@@ -47,7 +47,7 @@ export default (props) => {
         var pix = (x + y * width) * 4;
         p5.pixels[pix + 0] = bright;
         p5.pixels[pix + 1] = 0;
-        p5.pixels[pix + 2] = 0;
+        p5.pixels[pix + 2] = 255;
         p5.pixels[pix + 3] = 255;
       }
     }

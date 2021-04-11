@@ -2,42 +2,77 @@ import React from "react";
 import Sketch from "react-p5";
 
 export default (props) => {
-    let xUnitWidth = 70;
-    let yUnitHeight = 70;
+  var r,
+    t,
+    x,
+    maxiter = 600,
+    rMin = 2,
+    rMax = 4,
+    graphics,
+    height,
+    width;
 
-    let xBoundery = props.width;
-    let yBoundery = 500;
+  var width = props.width;
+  var height = props.height;
 
-    let xDirection = 3;
-    let yDirection = 4;
+  const setup = (p5, canvasParentRef) => {
+    var canvas = p5.createCanvas(window.innerWidth, height);
+    canvas.position(0, 0);
+    canvas.style("z-index", "-1");
+    graphics = p5.createGraphics(window.innerWidth, height);
 
-    let xStart = 0 + xUnitWidth / 2;
-    let yStart = 0 + yUnitHeight / 2;
+    t = (rMax - rMin) / width;
+    r = rMin;
+  };
 
-    let xEnd = xBoundery - xUnitWidth / 2;
-    let yEnd = yBoundery - yUnitHeight / 2;
+  const windowResized = (p5) => {
+    graphics.remove();
+    width = window.innerWidth;
+    var canvas = p5.createCanvas(width, height);
+    canvas.position(0, 0);
+    canvas.style("z-index", "-1");
+    graphics = p5.createGraphics(width, height);
 
-    let x = xStart;
-    let y = 50;
+    t = (rMax - rMin) / width;
+    r = rMin;
+    p5.loop();
+    p5.draw();
+    console.log("resized canvas");
+  };
 
-    const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(xBoundery, yBoundery).parent(canvasParentRef);
-    };
+  const draw = (p5) => {
+    p5.background(255);
 
-    const draw = (p5) => {
-        p5.background("white");
-        p5.ellipse(x, y, 70, 70);
-
-        if (x >= xEnd || x <= xStart - 1) {
-            xDirection = -xDirection;
+    for (var n = 0; n < 5; ++n) {
+      x = 0.5;
+      for (var i = 0; i < maxiter; ++i) {
+        x = f(x, r);
+        graphics.stroke(0.5, 25);
+        if (i > maxiter / 2) {
+          graphics.point(
+            p5.map(r, rMin, rMax, 0, width),
+            p5.map(x, 0, 1, height, 0),
+          );
         }
+      }
 
-        if (y >= yEnd || y <= yStart - 1) {
-            yDirection = -yDirection;
-        }
-        y = y + yDirection;
-        x = x + xDirection;
-    };
+      r += t;
 
-    return <Sketch setup={setup} draw={draw} />;
+      if (r > rMax) {
+        p5.print("Done!");
+        p5.noLoop();
+        break;
+      }
+    }
+    graphics.position(0, 61);
+    graphics.style("z-index", "-1");
+
+    p5.image(graphics, 0, 65);
+  };
+
+  function f(x, r) {
+    return r * x * (1 - x);
+  }
+
+  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;
 };

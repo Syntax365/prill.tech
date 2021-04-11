@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import HomepageHero from "./Hero/HomepageHero.jsx";
+import Button from "../../Components/Button/Button";
 
 import "./Homepage.css";
 
@@ -28,7 +29,7 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="">
         <HomepageHero />
       </div>
     );
