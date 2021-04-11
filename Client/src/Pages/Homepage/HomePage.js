@@ -29,22 +29,8 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="">
         <HomepageHero />
-        <div style={{ width: "100%", paddingTop: "70px" }}>
-          <h2>Temporary Nav Links</h2>
-          <Button type={"Link"} to={"/testpage"} style={{ width: "400px" }}>
-            Click to go to TestPage
-          </Button>
-          <br />
-          <Button
-            type={"Link"}
-            to={"/blog/mandelbrot-set"}
-            style={{ width: "400px" }}
-          >
-            Click to go to Mandelbrot Set
-          </Button>
-        </div>
       </div>
     );
   }
