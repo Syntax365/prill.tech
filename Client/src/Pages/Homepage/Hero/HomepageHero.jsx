@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Button from "../../../Components/Button/Button.jsx";
+import BifurcationSVG from "../../../Components/BifurcationSVG/BifurcationSVG";
 
 import "./HomepageHero.css";
 
@@ -8,21 +8,11 @@ class HomepageHero extends Component {
   render() {
     return (
       <>
-        <div id={`hero-img`} className={``} />
         <div
           id={`hero-container`}
-          style={{ position: "relative", zIndex: 10, width: "100%" }}
+          style={{ paddingTop: "3px", zIndex: 10, width: "100%" }}
         >
-          <div style={{ width: "50%", paddingTop: "70px" }}>
-            <h1 className="">Prill.Tech</h1>
-            <Button type={"Link"} to={"/testpage"} style={{ width: "400px" }}>
-              Click to go to TestPage
-            </Button>
-            <br />
-            <Button type={"Link"} to={"/blog/mandelbrot-set"} style={{ width: "400px" }}>
-              Click to go to Mandelbrot Set
-            </Button>
-          </div>
+          <BifurcationSVG width={window.innerWidth} height={900} />
         </div>
       </>
     );

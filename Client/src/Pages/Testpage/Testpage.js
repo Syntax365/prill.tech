@@ -9,11 +9,15 @@ class TestPage extends Component {
   render() {
     return (
       <div id="test-page-container" className={`App`}>
-
         <div id="test-svg container">
-          <div style={{ float: "center", width: "100%", height: '700px', paddingTop: '10px' }}>
-            <BifurcationSVG width={900} height={700} />
-          </div>
+          <div
+            style={{
+              float: "center",
+              width: "100%",
+              height: "700px",
+              paddingTop: "10px",
+            }}
+          ></div>
           <div style={{ float: "center" }}>
             This is the test page.
             <br />
