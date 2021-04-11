@@ -10,17 +10,18 @@ class TestPage extends Component {
   render() {
     return (
       <div id="test-page-container" className={`App`}>
-        This is the test page.
-        <br />
-        <Button type={"Link"} to={"/"} style={{ width: "400px" }}>
-          Click to go to TestPage
-        </Button>
+
         <div id="test-svg container">
-          <div style={{ float: "center", width: "100%" }}>
-            <MandelbrotSetSVG width={600} />
+          <div style={{ float: "center", width: "100%", height: '700px', backgroundColor: 'black' }}>
+            <MandelbrotSetSVG width={900} height={700} />
           </div>
-          <div style={{ float: "center" }}></div>
-          <div></div>
+          <div style={{ float: "center" }}>
+            This is the test page.
+            <br />
+            <Button type={"Link"} to={"/"} style={{ width: "400px" }}>
+              Click to go to Homepage
+            </Button>
+          </div>
         </div>
       </div>
     );

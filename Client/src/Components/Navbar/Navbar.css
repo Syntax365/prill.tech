@@ -1,0 +1,19 @@
+#Navbar{
+    height: 60px;
+    border-width: 1px;
+    border-color: gray;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 17%);
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    
+
+}
+
+#web-name{
+    display: block;
+    font-size: 28px;
+    list-style-type: disc;
+    padding-inline-start: 50px;
+    padding-inline-end: 50px;
+}
