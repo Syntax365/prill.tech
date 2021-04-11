@@ -7,6 +7,7 @@ export default (props) => {
     p5.createCanvas(props.width, props.height).parent(canvasParentRef);
     p5.pixelDensity(1);
     //p5.noLoop();
+    console.log('Setting up Mandelbrot Set')
   };
 
   const draw = (p5) => {
