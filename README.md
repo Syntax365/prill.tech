@@ -26,4 +26,5 @@ npm install react-scripts --save
 
 ### P5.js
 
-npm i --save react-p5
+npm install --save react-p5
+https://www.npmjs.com/package/p5
