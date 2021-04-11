@@ -42,7 +42,7 @@ import React from "react";
 export default (props) => {
   return (
     <div>
-      <BifurcationSVG width={window.innerWidth} height={700} />
+      <BifurcationSVG width={document.body.clientWidth} height={700} />
     </div>
   );
 };

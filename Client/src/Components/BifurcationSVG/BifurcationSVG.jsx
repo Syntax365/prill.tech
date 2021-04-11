@@ -16,10 +16,10 @@ export default (props) => {
   var height = props.height;
 
   const setup = (p5, canvasParentRef) => {
-    var canvas = p5.createCanvas(window.innerWidth, height);
+    var canvas = p5.createCanvas(document.body.clientWidth, height);
     canvas.position(0, 0);
     canvas.style("z-index", "-1");
-    graphics = p5.createGraphics(window.innerWidth, height);
+    graphics = p5.createGraphics(document.body.clientWidth, height);
 
     t = (rMax - rMin) / width;
     r = rMin;
@@ -27,7 +27,7 @@ export default (props) => {
 
   const windowResized = (p5) => {
     graphics.remove();
-    width = window.innerWidth;
+    width = document.body.clientWidth;
     var canvas = p5.createCanvas(width, height);
     canvas.position(0, 0);
     canvas.style("z-index", "-1");
