@@ -18,6 +18,10 @@ class HomepageHero extends Component {
             <Button type={"Link"} to={"/testpage"} style={{ width: "400px" }}>
               Click to go to TestPage
             </Button>
+            <br />
+            <Button type={"Link"} to={"/blog/mandelbrot-set"} style={{ width: "400px" }}>
+              Click to go to Mandelbrot Set
+            </Button>
           </div>
         </div>
       </>
