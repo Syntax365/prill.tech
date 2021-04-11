@@ -8,10 +8,10 @@ class Button extends Component {
   render() {
     const {
       type = "",
-      to,
-      children,
+      to = "",
+      children = "",
       className = "",
-      style = "",
+      style = {},
       ...otherProps
     } = this.props;
 

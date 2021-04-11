@@ -4,15 +4,15 @@ import Sketch from "react-p5";
 
 export default (props) => {
   const setup = (p5, canvasParentRef) => {
-    p5.createCanvas(props.width, 400).parent(canvasParentRef);
+    p5.createCanvas(props.width, props.height).parent(canvasParentRef);
     p5.pixelDensity(1);
     //p5.noLoop();
   };
 
   const draw = (p5) => {
-    var maxiterations = 10;
+    var maxiterations = 100;
     var width = props.width;
-    var height = 400;
+    var height = props.height;
 
     p5.loadPixels();
     for (var x = 0; x < width; x++) {
@@ -37,7 +37,7 @@ export default (props) => {
         }
 
         var bright = p5.map(n, 0, maxiterations, 0, 1);
-        bright = p5.map(p5.sqrt(bright), 0, 1, 0.52, 255);
+        bright = p5.map(p5.sqrt(bright), 0, 1, 0, 255);
 
         if (n == maxiterations) {
           bright = 0;
@@ -46,7 +46,7 @@ export default (props) => {
         var pix = (x + y * width) * 4;
         p5.pixels[pix + 0] = bright;
         p5.pixels[pix + 1] = 0;
-        p5.pixels[pix + 2] = 10;
+        p5.pixels[pix + 2] = 0;
         p5.pixels[pix + 3] = 255;
       }
     }
