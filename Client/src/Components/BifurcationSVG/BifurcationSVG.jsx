@@ -5,7 +5,7 @@ export default (props) => {
   var r,
     t,
     x,
-    maxiter = 600,
+    maxiter = 1000,
     rMin = 2,
     rMax = 4,
     graphics,
@@ -16,10 +16,10 @@ export default (props) => {
   var height = props.height;
 
   const setup = (p5, canvasParentRef) => {
-    var canvas = p5.createCanvas(document.body.clientWidth, height);
-    canvas.position(0, 0);
+    var canvas = p5.createCanvas(width, height);
+    canvas.position(0, 61);
     canvas.style("z-index", "-1");
-    graphics = p5.createGraphics(document.body.clientWidth, height);
+    graphics = p5.createGraphics(width, height);
 
     t = (rMax - rMin) / width;
     r = rMin;
@@ -29,7 +29,7 @@ export default (props) => {
     graphics.remove();
     width = document.body.clientWidth;
     var canvas = p5.createCanvas(width, height);
-    canvas.position(0, 0);
+    canvas.position(0, 61);
     canvas.style("z-index", "-1");
     graphics = p5.createGraphics(width, height);
 
@@ -37,17 +37,15 @@ export default (props) => {
     r = rMin;
     p5.loop();
     p5.draw();
-    console.log("resized canvas");
   };
 
   const draw = (p5) => {
     p5.background(255);
-
-    for (var n = 0; n < 5; ++n) {
+    graphics.stroke(1, 25);
+    for (var n = 0; n < 14; ++n) {
       x = 0.5;
-      for (var i = 0; i < maxiter; ++i) {
+      for (var i = 500; i < maxiter; ++i) {
         x = f(x, r);
-        graphics.stroke(0.5, 25);
         if (i > maxiter / 2) {
           graphics.point(
             p5.map(r, rMin, rMax, 0, width),
@@ -59,15 +57,13 @@ export default (props) => {
       r += t;
 
       if (r > rMax) {
-        p5.print("Done!");
         p5.noLoop();
         break;
       }
     }
-    graphics.position(0, 61);
     graphics.style("z-index", "-1");
 
-    p5.image(graphics, 0, 65);
+    p5.image(graphics, 0, 0);
   };
 
   function f(x, r) {
