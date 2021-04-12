@@ -5,12 +5,17 @@
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 17%);
   width: 100%;
   z-index: 100;
+  position: fixed;
+  background-color: white;
 }
 
 #web-name {
   display: block;
-  font-size: 28px;
+  font-size: 30px;
   list-style-type: disc;
-  padding-inline-start: 50px;
+  padding-inline-start: 20px;
   padding-inline-end: 50px;
 }
+#web-name {
+  color: #000000;
+} /* Unvisited link  */
