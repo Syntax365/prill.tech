@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Button from "../../Components/Button/Button";
 import MandelbrotSetSVG from "../../Components/MandelbrotSetSVG/MandelbrotSetSVG";
+import TestSVG from "../../Components/TestSVG/TestSVG";
 
 import "./Testpage.css";
 
@@ -16,9 +17,10 @@ class TestPage extends Component {
               width: "100%",
               height: "900px",
               paddingTop: "10px",
+              borderBottom: "solid",
             }}
           >
-            <MandelbrotSetSVG width={900} height={900}></MandelbrotSetSVG>
+            <TestSVG width={document.body.clientWidth} height={900} />
           </div>
           <div style={{ float: "center" }}>
             This is the test page.

@@ -6,7 +6,7 @@ export default (props) => {
   let yUnitHeight = 70;
 
   let xBoundery = props.width;
-  let yBoundery = 500;
+  let yBoundery = props.height;
 
   let xDirection = 3;
   let yDirection = 4;

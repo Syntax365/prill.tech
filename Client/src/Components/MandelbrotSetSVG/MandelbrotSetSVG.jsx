@@ -10,6 +10,21 @@ export default (props) => {
     console.log("Setting up Mandelbrot Set");
   };
 
+  var background, color1, color2, color3, color4;
+  if (props.type === "icon") {
+    background = 255;
+    color1 = 0;
+    color2 = 0;
+    color3 = 0;
+    color4 = 255;
+  } else {
+    background = 0.75;
+    color1 = 0;
+    color2 = 255;
+    color3 = 255;
+    color4 = 255;
+  }
+
   const draw = (p5) => {
     var maxiterations = 100;
     var width = props.width;
@@ -37,18 +52,18 @@ export default (props) => {
           n++;
         }
 
-        var bright = p5.map(n, 0, maxiterations, 0, 0.75);
-        bright = p5.map(p5.sqrt(bright), 0, 0.5, 0, 255);
+        var bright = p5.map(n, 0, maxiterations, 0, background);
+        bright = p5.map(p5.sqrt(bright), 0, 1, 0, 255);
 
         if (n == maxiterations) {
-          bright = 0;
+          bright = color1;
         }
 
         var pix = (x + y * width) * 4;
         p5.pixels[pix + 0] = bright;
-        p5.pixels[pix + 1] = 0;
-        p5.pixels[pix + 2] = 255;
-        p5.pixels[pix + 3] = 255;
+        p5.pixels[pix + 1] = bright;
+        p5.pixels[pix + 2] = bright;
+        p5.pixels[pix + 3] = color4;
       }
     }
     p5.updatePixels();
