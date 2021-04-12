@@ -25,7 +25,9 @@ class HomepageHero extends Component {
               textAlign: "center",
             }}
           >
-            <h2>Temporary Nav Links</h2>
+            <div>
+              <h1>Change is the only constant.</h1>
+            </div>
             <Button type={"Link"} to={"/testpage"} style={{ width: "400px" }}>
               Click to go to TestPage
             </Button>
@@ -41,12 +43,12 @@ class HomepageHero extends Component {
           <div
             className={``}
             style={{
-              height: "500px",
+              height: "900px",
             }}
           >
-            <BifurcationParent width={document.body.clientWidth} height={700} />
+            <BifurcationParent width={document.body.clientWidth} height={900} />
           </div>
-          <div
+          {/* <div
             style={{
               background: "white",
               width: "100%",
@@ -56,7 +58,7 @@ class HomepageHero extends Component {
               borderTop: "solid",
               borderTopWidth: "1px",
             }}
-          ></div>
+          ></div> */}
         </div>
       </>
     );
