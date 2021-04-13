@@ -33,11 +33,7 @@ class Navbar extends Component {
               href="/"
             >
               <span style={{ float: "left", paddingTop: "6px" }}>
-                <MandelbrotSetSVG
-                  width={50}
-                  height={50}
-                  type="icon"
-                ></MandelbrotSetSVG>
+                <MandelbrotSetSVG width={50} height={50} type="icon" />
               </span>
               <span
                 style={{
@@ -49,7 +45,36 @@ class Navbar extends Component {
               </span>
             </a>
           </div>
-          <div></div>
+        </div>
+        <div
+          id="nav-menu"
+          className={"float-right"}
+          style={{
+            height: "60px",
+            paddingRight: "20px",
+          }}
+        >
+          <div
+            style={{
+              margin: "auto",
+              position: "relative",
+              display: "table-cell",
+              paddingTop: "19px",
+            }}
+          >
+            <a href="/blog/mandelbrot-set">Link 1</a>
+          </div>
+          <div
+            style={{
+              margin: "auto",
+              position: "relative",
+              display: "table-cell",
+              paddingTop: "19px",
+              paddingLeft: "20px",
+            }}
+          >
+            <a href="/testpage">Link 2</a>
+          </div>
         </div>
       </div>
     );
