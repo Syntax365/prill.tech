@@ -2,19 +2,13 @@ import React, { Component } from "react";
 
 import BifurcationParent from "../../../Components/BifurcationSVG/BifurcationParent";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
+
 import { Text, Heading, Box } from "@chakra-ui/react";
 
 import "./HomepageHero.css";
 
 class HomepageHero extends Component {
   render() {
-    const breakpoints = createBreakpoints({
-      sm: "360px",
-      md: "768px",
-      lg: "1366px",
-      xl: "1920px",
-    });
-
     return (
       <>
         <div
