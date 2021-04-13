@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import BifurcationParent from "../../../Components/BifurcationSVG/BifurcationParent";
-import Button from "../../../Components/Button/Button";
 import "./HomepageHero.css";
 
 class HomepageHero extends Component {
@@ -21,44 +20,25 @@ class HomepageHero extends Component {
             className="float-left"
             style={{
               width: "50%",
-              paddingTop: "70px",
+              paddingTop: "130px",
               textAlign: "center",
             }}
           >
             <div>
-              <h1>Change is the only constant.</h1>
+              <h1 style={{ marginBottom: "0px " }}>
+                Change is the only constant.
+              </h1>
+              <p style={{ marginTop: "10px" }}>Imagine. Innovate. Engineer.</p>
             </div>
-            <Button type={"Link"} to={"/testpage"} style={{ width: "400px" }}>
-              Click to go to TestPage
-            </Button>
-            <br />
-            <Button
-              type={"Link"}
-              to={"/blog/mandelbrot-set"}
-              style={{ width: "400px" }}
-            >
-              Click to go to Mandelbrot Set
-            </Button>
           </div>
           <div
             className={``}
             style={{
-              height: "900px",
+              height: "760px",
             }}
           >
             <BifurcationParent width={document.body.clientWidth} height={900} />
           </div>
-          {/* <div
-            style={{
-              background: "white",
-              width: "100%",
-              height: "400px",
-              top: "0",
-              zIndex: "2",
-              borderTop: "solid",
-              borderTopWidth: "1px",
-            }}
-          ></div> */}
         </div>
       </>
     );
