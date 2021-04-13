@@ -1,7 +1,5 @@
 #Navbar {
   height: 60px;
-  border-width: 1px;
-  border-color: gray;
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 17%);
   width: 100%;
   z-index: 100;
