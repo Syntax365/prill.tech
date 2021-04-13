@@ -1,10 +1,20 @@
 import React, { Component } from "react";
 
 import BifurcationParent from "../../../Components/BifurcationSVG/BifurcationParent";
+import { createBreakpoints } from "@chakra-ui/theme-tools";
+import { Text, Heading, Box } from "@chakra-ui/react";
+
 import "./HomepageHero.css";
 
 class HomepageHero extends Component {
   render() {
+    const breakpoints = createBreakpoints({
+      sm: "360px",
+      md: "768px",
+      lg: "1366px",
+      xl: "1920px",
+    });
+
     return (
       <>
         <div
@@ -19,25 +29,25 @@ class HomepageHero extends Component {
           <div
             className="float-left"
             style={{
-              width: "50%",
-              paddingTop: "130px",
+              width: "100%",
+              height: "50px",
               textAlign: "center",
             }}
           >
-            <div>
-              <h1 style={{ marginBottom: "0px " }}>
+            <Box pt={250}>
+              <Heading as="h1" size="2xl">
                 Change is the only constant.
-              </h1>
-              <p style={{ marginTop: "10px" }}>Imagine. Innovate. Engineer.</p>
-            </div>
+              </Heading>
+              <Text fontWeight="semibold">Imagine. Innovate. Engineer.</Text>
+            </Box>
           </div>
           <div
             className={``}
             style={{
-              height: "760px",
+              height: "500px",
             }}
           >
-            <BifurcationParent width={document.body.clientWidth} height={900} />
+            <BifurcationParent width={document.body.clientWidth} height={500} />
           </div>
         </div>
       </>
