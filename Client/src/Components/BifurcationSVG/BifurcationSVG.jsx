@@ -5,7 +5,7 @@ export default (props) => {
   var r,
     t,
     x,
-    maxiter = 900,
+    maxiter = 750,
     rMin = 2,
     rMax = 4,
     graphics,
@@ -42,9 +42,9 @@ export default (props) => {
   const draw = (p5) => {
     p5.background(255);
     graphics.stroke(136, 56, 140, 25, 12);
-    for (var n = 0; n < 15; ++n) {
+    for (var n = 0; n < 25; ++n) {
       x = 0.5;
-      for (var i = 300; i < maxiter; ++i) {
+      for (var i = 600; i < maxiter; ++i) {
         x = f(x, r);
         if (i > maxiter / 2) {
           graphics.point(
