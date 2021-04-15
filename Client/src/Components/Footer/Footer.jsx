@@ -11,6 +11,7 @@ class Footer extends Component {
         role="contentinfo"
         mx="auto"
         py="12"
+        mt="10px"
         px={{ base: "4", md: "8" }}
         bgColor={"gray.300"}
       >

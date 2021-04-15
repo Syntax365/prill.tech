@@ -10,7 +10,8 @@ class TestPage extends Component {
   render() {
     return (
       <div id="test-page-container" className={`App`}>
-        Test
+        xyz
+        {/* <TestSVG height={900} width={document.body.width} /> */}
       </div>
     );
   }

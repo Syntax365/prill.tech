@@ -29,7 +29,7 @@ class HomepageHero extends Component {
             }}
           >
             <Box pt={250}>
-              <Heading as="h1" size="2xl">
+              <Heading as="h1" size="2xl" px="20px">
                 Change is the only constant.
               </Heading>
               <Text fontWeight="semibold">Imagine. Innovate. Engineer.</Text>
