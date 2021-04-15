@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-
-import Button from "../Button/Button";
 import MandelbrotSetSVG from "../../Components/MandelbrotSetSVG/MandelbrotSetSVG";
+import DropDownMenu from "./Menu/DropDownMenu";
+
+import { MenuItem, MenuGroup, MenuDivider, Link } from "@chakra-ui/react";
 
 import "./Navbar.css";
 
@@ -60,20 +61,22 @@ class Navbar extends Component {
               position: "relative",
               display: "table-cell",
               paddingTop: "19px",
-            }}
-          >
-            <a href="/blog/mandelbrot-set">Link 1</a>
-          </div>
-          <div
-            style={{
-              margin: "auto",
-              position: "relative",
-              display: "table-cell",
-              paddingTop: "19px",
               paddingLeft: "20px",
             }}
           >
-            <a href="/testpage">Link 2</a>
+            <DropDownMenu parentLabel="Lazy Links">
+              <MenuGroup title="Blog Links">
+                <MenuItem>
+                  <Link href="/blog/mandelbrot-set">Mandlebrot Set</Link>
+                </MenuItem>
+              </MenuGroup>
+              <MenuDivider />
+              <MenuGroup title="Development Pages">
+                <MenuItem>
+                  <Link href="/testpage">Testpage 1</Link>
+                </MenuItem>
+              </MenuGroup>
+            </DropDownMenu>
           </div>
         </div>
       </div>

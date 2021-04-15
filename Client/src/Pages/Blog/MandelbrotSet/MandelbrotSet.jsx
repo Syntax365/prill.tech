@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import Button from "../../../Components/Button/Button";
 import MandelbrotSetSVG from "../../../Components/MandelbrotSetSVG/MandelbrotSetSVG";
 
 class MandelbrotSet extends Component {
@@ -17,13 +16,7 @@ class MandelbrotSet extends Component {
           >
             <MandelbrotSetSVG width={900} height={700} />
           </div>
-          <div style={{ float: "center" }}>
-            This is the test page.
-            <br />
-            <Button type={"Link"} to={"/"} style={{ width: "400px" }}>
-              Click to go to Homepage
-            </Button>
-          </div>
+          <div style={{ float: "center" }}>TODO: Build Blog Tempalte</div>
         </div>
       </div>
     );
