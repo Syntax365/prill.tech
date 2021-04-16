@@ -8,8 +8,6 @@ class DailyFactSection extends Component {
     return (
       <>
         <Section>Section 1</Section>
-        <Section>Section 2</Section>
-        <Section>Section 3</Section>
       </>
     );
   }
