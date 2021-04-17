@@ -1,9 +1,15 @@
 import path from "path";
 import express from "express";
+import "regenerator-runtime/runtime";
+
+const s3Exports = require("./node_scripts/s3_getBucketData.js");
 
 const PORT = process.env.HTTP_PORT || 8080;
 const app = express();
 const nodemailer = require("nodemailer");
+
+var AWS = require("aws-sdk");
+AWS.config.update({ region: "us-east-2" });
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.json());
@@ -15,10 +21,17 @@ app.get("/api/", (req, res) => {
 });
 
 app.get("/api/test", (req, res) => {
-  res.json({
-    fullName: "Tyler Prill",
-    integrationTest: "Success!",
-  });
+  console.log("testing");
+  getAllS3Data(res);
+});
+
+async function getAllS3Data(res) {
+  var data = await s3Exports.getAllData();
+  res.send(data);
+}
+
+app.get("/api/fun-fact", (req, res) => {
+  getAllS3Data(res);
 });
 
 app.post("/send", function (req, res, next) {

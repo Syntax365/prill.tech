@@ -42,7 +42,7 @@ class Navbar extends Component {
                   float: "right",
                 }}
               >
-                Prill.<span style={{ color: "#88388c" }}>Tech</span>
+                Prill.<span style={{ color: "#0000FF" }}>Tech</span>
               </span>
             </a>
           </div>
@@ -64,7 +64,7 @@ class Navbar extends Component {
               paddingLeft: "20px",
             }}
           >
-            <DropDownMenu parentLabel="Lazy Links">
+            <DropDownMenu parentLabel="Links">
               <MenuGroup title="Blog Links">
                 <MenuItem>
                   <Link href="/blog/mandelbrot-set">Mandlebrot Set</Link>

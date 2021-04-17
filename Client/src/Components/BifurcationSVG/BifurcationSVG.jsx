@@ -26,22 +26,24 @@ export default (props) => {
   };
 
   const windowResized = (p5) => {
-    graphics.remove();
-    width = document.body.clientWidth;
-    var canvas = p5.createCanvas(width, height);
-    canvas.position(0, 61);
-    canvas.style("z-index", "-1");
-    graphics = p5.createGraphics(width, height);
+    if (document.body.clientWidth != width) {
+      graphics.remove();
+      width = document.body.clientWidth;
+      var canvas = p5.createCanvas(width, height);
+      canvas.position(0, 61);
+      canvas.style("z-index", "-1");
+      graphics = p5.createGraphics(width, height);
 
-    t = (rMax - rMin) / width;
-    r = rMin;
-    p5.loop();
-    p5.draw();
+      t = (rMax - rMin) / width;
+      r = rMin;
+      p5.loop();
+      p5.draw();
+    }
   };
 
   const draw = (p5) => {
     p5.background(255);
-    graphics.stroke(136, 56, 140, 25, 12);
+    graphics.stroke(0, 91, 234, 25, 12);
     for (var n = 0; n < 25; ++n) {
       x = 0.5;
       for (var i = 600; i < maxiter; ++i) {
