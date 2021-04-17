@@ -10,6 +10,7 @@ import {
   Heading,
   Button,
   Center,
+  Box,
 } from "@chakra-ui/react";
 import Section from "../Section/Section";
 
@@ -45,10 +46,12 @@ class ContactForm extends Component {
     return (
       <>
         <Section>
-          <Heading as="h3" size="lg">
-            Contact Us
-          </Heading>
-          <Text>We are always looking for feedback and great ideas.</Text>
+          <Box w="100%" textAlign="Center">
+            <Heading as="h3" size="lg">
+              Contact Us
+            </Heading>
+            <Text>We are always looking for feedback and great ideas.</Text>
+          </Box>
           <FormControl pt="12px" id="email" isRequired>
             <FormLabel>Email Address:</FormLabel>
             <Input
@@ -76,9 +79,8 @@ class ContactForm extends Component {
                   );
                 }}
                 loadingText="Sending"
-                borderColor="#88388c"
-                textColor="#88388c"
                 variant="outline"
+                borderColor="black"
               >
                 Send Email
               </Button>

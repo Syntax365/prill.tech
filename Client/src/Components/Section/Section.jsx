@@ -11,16 +11,14 @@ class Section extends Component {
             borderRadius="8"
             border="solid"
             borderWidth="1px"
-            borderColor="#88388c"
+            borderColor="black"
             mt={"20px"}
             mb={"20px"}
             bg={"white"}
             boxShadow={"lg"}
             w={["350px", "500px", "720px", "990px", "1200px"]}
           >
-            <Text textAlign={`center`} m="20px">
-              {children}
-            </Text>
+            <Box m="14px">{children}</Box>
           </Box>
         </Center>
       </Box>
