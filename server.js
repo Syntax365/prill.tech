@@ -20,6 +20,8 @@ app.get("/api/", (req, res) => {
   res.send("API default route");
 });
 
+///////////////////////////////////////////////////////
+
 app.get("/api/test", (req, res) => {
   getAllS3Data(res);
 });
@@ -29,9 +31,18 @@ async function getAllS3Data(res) {
   res.send(data);
 }
 
+///////////////////////////////////////////////////////
+
 app.get("/api/fun-fact", (req, res) => {
-  getAllS3Data(res);
+  getDailyFactS3Data(res);
 });
+
+async function getDailyFactS3Data(res) {
+  var data = await s3Exports.getDailyFact();
+  res.send(data);
+}
+
+///////////////////////////////////////////////////////
 
 app.post("/send", function (req, res, next) {
   const transporter = nodemailer.createTransport({
@@ -59,6 +70,8 @@ app.post("/send", function (req, res, next) {
   });
   res.sendStatus(200);
 });
+
+///////////////////////////////////////////////////////
 
 // Handles any requests that don't match the ones above
 app.get("*", (req, res) => {

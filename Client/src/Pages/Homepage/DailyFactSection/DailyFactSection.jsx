@@ -23,20 +23,20 @@ class DailyFactSection extends Component {
   }
 
   getTestData() {
-    fetch("/api/test")
+    fetch("/api/fun-fact")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
         this.setState({
           testResponse: data,
-          title: data.dailyfacts.items.day1.title,
-          text_body: data.dailyfacts.items.day1.text_body,
-          image: data.dailyfacts.items.day1.image,
-          link: data.dailyfacts.items.day1.link,
-          techTag: data.dailyfacts.items.day1.tags.technology,
-          physicsTag: data.dailyfacts.items.day1.tags.physics,
-          mathTag: data.dailyfacts.items.day1.tags.math,
-          histTag: data.dailyfacts.items.day1.tags.history,
+          title: data.title,
+          text_body: data.text_body,
+          image: data.image,
+          link: data.link,
+          techTag: data.tags.technology,
+          scienceTag: data.tags.science,
+          mathTag: data.tags.math,
+          histTag: data.tags.history,
         });
       });
   }
@@ -66,7 +66,7 @@ class DailyFactSection extends Component {
                   href={this.state.link}
                 >
                   {this.state.testResponse && (
-                    <div>Todays Fact: {this.state.title}</div>
+                    <div>Today's Fact: {this.state.title}</div>
                   )}
                 </Link>
                 <Text mt={"10px"} color="gray.500">
@@ -106,11 +106,11 @@ class DailyFactSection extends Component {
                           color="white"
                           background="orange.500"
                         >
-                          {this.state.histTag && <span>Math</span>}
+                          {this.state.mathTag && <span>Math</span>}
                         </Text>
                       </Box>
                     )}
-                    {this.state.physicsTag && (
+                    {this.state.scienceTag && (
                       <Box w="120px" mr="5px">
                         <Text
                           borderRadius="6px"
@@ -123,7 +123,7 @@ class DailyFactSection extends Component {
                           color="white"
                           background="red.500"
                         >
-                          {this.state.histTag && <span>Physics</span>}
+                          {this.state.scienceTag && <span>Science</span>}
                         </Text>
                       </Box>
                     )}

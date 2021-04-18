@@ -31,14 +31,16 @@ app.use(bodyParser.json());
 app.use(_express["default"]["static"](_path["default"].join(__dirname, "Client", "build")));
 app.get("/api/", function (req, res) {
   res.send("API default route");
-});
+}); ///////////////////////////////////////////////////////
+
 app.get("/api/test", function (req, res) {
   getAllS3Data(res);
 });
 
 function getAllS3Data(_x) {
   return _getAllS3Data.apply(this, arguments);
-}
+} ///////////////////////////////////////////////////////
+
 
 function _getAllS3Data() {
   _getAllS3Data = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(res) {
@@ -65,8 +67,38 @@ function _getAllS3Data() {
 }
 
 app.get("/api/fun-fact", function (req, res) {
-  getAllS3Data(res);
+  getDailyFactS3Data(res);
 });
+
+function getDailyFactS3Data(_x2) {
+  return _getDailyFactS3Data.apply(this, arguments);
+} ///////////////////////////////////////////////////////
+
+
+function _getDailyFactS3Data() {
+  _getDailyFactS3Data = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(res) {
+    var data;
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return s3Exports.getDailyFact();
+
+          case 2:
+            data = _context2.sent;
+            res.send(data);
+
+          case 4:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+  return _getDailyFactS3Data.apply(this, arguments);
+}
+
 app.post("/send", function (req, res, next) {
   var transporter = nodemailer.createTransport({
     service: "gmail",
@@ -90,7 +122,8 @@ app.post("/send", function (req, res, next) {
     }
   });
   res.sendStatus(200);
-}); // Handles any requests that don't match the ones above
+}); ///////////////////////////////////////////////////////
+// Handles any requests that don't match the ones above
 
 app.get("*", function (req, res) {
   res.sendFile(_path["default"].join(__dirname + "/Client/build/index.html"));
