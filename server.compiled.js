@@ -89,7 +89,7 @@ app.post("/send", function (req, res, next) {
       console.log("Email Successfully Sent: ", mailOptions);
     }
   });
-  res.send("Completed post");
+  res.sendStatus(200);
 }); // Handles any requests that don't match the ones above
 
 app.get("*", function (req, res) {
