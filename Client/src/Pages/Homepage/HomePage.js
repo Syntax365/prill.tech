@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
 import HomepageHero from "./Hero/HomepageHero.jsx";
-import FunFactSection from "./DailyFactSection/DailyFactSection.jsx";
+import FunFactSection from "./DailyFactSection/DailyFactSection";
 import ContactForm from "../../Components/ContactForm/ContactForm";
-import Button from "../../Components/Button/Button";
+import ValueProps from "../../Components/ValueProps/ValueProps";
 
 import "./Homepage.css";
 
@@ -13,6 +13,7 @@ class HomePage extends Component {
       <div className="">
         <HomepageHero />
         <FunFactSection />
+        <ValueProps />
         <ContactForm />
       </div>
     );
