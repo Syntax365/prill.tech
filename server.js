@@ -21,7 +21,6 @@ app.get("/api/", (req, res) => {
 });
 
 app.get("/api/test", (req, res) => {
-  console.log("testing");
   getAllS3Data(res);
 });
 

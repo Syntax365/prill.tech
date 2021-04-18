@@ -42,7 +42,7 @@ class Navbar extends Component {
                   float: "right",
                 }}
               >
-                Prill.<span style={{ color: "#0000FF" }}>Tech</span>
+                Prill.<span style={{ color: "#1F51FF" }}>Tech</span>
               </span>
             </a>
           </div>
@@ -55,7 +55,7 @@ class Navbar extends Component {
             paddingRight: "20px",
           }}
         >
-          <div
+          {/* <div
             style={{
               margin: "auto",
               position: "relative",
@@ -77,7 +77,7 @@ class Navbar extends Component {
                 </MenuItem>
               </MenuGroup>
             </DropDownMenu>
-          </div>
+          </div> */}
         </div>
       </div>
     );
