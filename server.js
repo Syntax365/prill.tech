@@ -34,11 +34,11 @@ async function getAllS3Data(res) {
 ///////////////////////////////////////////////////////
 
 app.get("/api/fun-fact", (req, res) => {
-  getDailyFactS3Data(res);
+  getDailyFactS3Data(req, res);
 });
 
-async function getDailyFactS3Data(res) {
-  var data = await s3Exports.getDailyFact();
+async function getDailyFactS3Data(req, res) {
+  var data = await s3Exports.getDailyFact(req);
   res.send(data);
 }
 

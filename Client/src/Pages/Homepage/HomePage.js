@@ -10,7 +10,7 @@ import "./Homepage.css";
 class HomePage extends Component {
   render() {
     return (
-      <div className="">
+      <div id="homepage-container">
         <HomepageHero />
         <FunFactSection />
         <ValueProps />
