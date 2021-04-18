@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import MandelbrotSetSVG from "../../Components/MandelbrotSetSVG/MandelbrotSetSVG";
-import DropDownMenu from "./Menu/DropDownMenu";
-
-import { MenuItem, MenuGroup, MenuDivider, Link } from "@chakra-ui/react";
+//import MandelbrotSetSVG from "../../Components/MandelbrotSetSVG/MandelbrotSetSVG";
+import { Image } from "@chakra-ui/react";
+import prilltechLogo from "../../images/logo/prilltech_logo.svg";
 
 import "./Navbar.css";
 
@@ -32,8 +31,14 @@ class Navbar extends Component {
               }}
               href="/"
             >
-              <span style={{ float: "left", paddingTop: "6px" }}>
-                <MandelbrotSetSVG width={50} height={50} type="icon" />
+              <span style={{ float: "left", paddingTop: "9px" }}>
+                <img
+                  width={"57px"}
+                  height={"57px"}
+                  src={prilltechLogo}
+                  objectFit="fill"
+                />
+                {/* <MandelbrotSetSVG width={50} height={50} type="icon" /> */}
               </span>
               <span
                 style={{
