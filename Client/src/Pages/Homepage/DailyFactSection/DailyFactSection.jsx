@@ -46,15 +46,22 @@ class DailyFactSection extends Component {
       <>
         <Section>
           <Box display={{ md: "flex" }}>
-            <Box flexShrink={0} textAlign="left">
-              <Image
-                href={this.state.link}
-                borderRadius="lg"
-                mt={{ md: 30, lg: 0 }}
-                width={{ md: 80 }}
-                src={this.state.image}
-              />
-            </Box>
+            <Center flexShrink={0}>
+              <Box textAlign="left">
+                <Image
+                  href={this.state.link}
+                  borderRadius="lg"
+                  mt={{ lg: 0 }}
+                  width={{ md: "320px", lg: "320px" }}
+                  height={{ md: "240px", lg: "180px" }}
+                  objectFit="cover"
+                  alt="Daily Fact Image"
+                  // minHeight={{ md: "240px", lg: "180px" }}
+                  // maxHeight={{ md: "240px", lg: "180px" }}
+                  src={this.state.image}
+                />
+              </Box>
+            </Center>
             <Center>
               <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
                 <Link
