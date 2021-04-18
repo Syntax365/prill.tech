@@ -19,11 +19,13 @@ class DailyFactSection extends Component {
   }
 
   componentDidMount() {
-    this.getTestData();
+    this.getFactData();
   }
 
-  getTestData() {
-    fetch("/api/fun-fact")
+  getFactData() {
+    var incDays = new URLSearchParams(window.location.search).get("incDays");
+    if (!incDays) incDays = 0;
+    fetch("/api/fun-fact?incDays=" + incDays)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

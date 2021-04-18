@@ -3,7 +3,7 @@ module.exports = {
   getDailyFact: getFactData,
 };
 
-function getFactData() {
+function getFactData(req) {
   return new Promise((resolve) => {
     var AWS = require("aws-sdk");
     AWS.config.update({ region: "us-east-2" });
@@ -19,11 +19,19 @@ function getFactData() {
         resolve(err.toString());
       } else {
         var dateObj = new Date();
-
         //returns 0-6 based starting on Sunday == 0;
         var dayOfWeekNumber = dateObj.getDay();
-        //testing
-        dayOfWeekNumber = dayOfWeekNumber + 0;
+        //query param override date
+        var incDays = req.query.incDays ? parseInt(req.query.incDays) : 0;
+        dayOfWeekNumber = dayOfWeekNumber + incDays;
+
+        var fact_count = Object.keys(JSON.parse(data.Body).dailyfacts.items)
+          .length;
+
+        //What if we dont have enough facts?
+        if (dayOfWeekNumber >= fact_count) {
+          var dayOfWeekNumber = parseInt(dayOfWeekNumber % fact_count);
+        }
 
         var undelimitedData = JSON.parse(data.Body).dailyfacts.items[
           dayOfWeekNumber
