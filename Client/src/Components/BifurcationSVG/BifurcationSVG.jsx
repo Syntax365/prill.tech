@@ -43,7 +43,7 @@ export default (props) => {
 
   const draw = (p5) => {
     p5.background(255);
-    graphics.stroke(0, 91, 234, 25, 12);
+    graphics.stroke(31, 81, 255, 25, 12);
     for (var n = 0; n < 25; ++n) {
       x = 0.5;
       for (var i = 600; i < maxiter; ++i) {

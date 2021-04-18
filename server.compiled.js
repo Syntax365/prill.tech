@@ -33,7 +33,6 @@ app.get("/api/", function (req, res) {
   res.send("API default route");
 });
 app.get("/api/test", function (req, res) {
-  console.log("testing");
   getAllS3Data(res);
 });
 
