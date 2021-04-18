@@ -23,7 +23,7 @@ function getFactData() {
         //returns 0-6 based starting on Sunday == 0;
         var dayOfWeekNumber = dateObj.getDay();
         //testing
-        //dayOfWeekNumber = dayOfWeekNumber + 6;
+        dayOfWeekNumber = dayOfWeekNumber + 0;
 
         var undelimitedData = JSON.parse(data.Body).dailyfacts.items[
           dayOfWeekNumber
