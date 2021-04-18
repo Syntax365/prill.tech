@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Box, Text, Center } from "@chakra-ui/react";
+import { Box, Center } from "@chakra-ui/react";
 
 class Section extends Component {
   render() {
@@ -8,7 +8,7 @@ class Section extends Component {
       <Box pr="20px" pl="20px" h={""}>
         <Center>
           <Box
-            borderRadius="8"
+            borderRadius="8px"
             border="solid"
             borderWidth="1px"
             borderColor="black"

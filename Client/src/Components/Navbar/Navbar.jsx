@@ -36,7 +36,7 @@ class Navbar extends Component {
                   width={"57px"}
                   height={"57px"}
                   src={prilltechLogo}
-                  objectFit="fill"
+                  objectfit="fill"
                 />
                 {/* <MandelbrotSetSVG width={50} height={50} type="icon" /> */}
               </span>
