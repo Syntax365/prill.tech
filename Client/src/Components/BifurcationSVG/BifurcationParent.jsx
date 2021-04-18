@@ -41,8 +41,8 @@ import React from "react";
 
 export default (props) => {
   return (
-    <div>
-      <BifurcationSVG width={document.body.clientWidth} height={700} />
+    <div id="Bifurcation-Parent" style={{ width: "100%" }}>
+      <BifurcationSVG height={700} />
     </div>
   );
 };

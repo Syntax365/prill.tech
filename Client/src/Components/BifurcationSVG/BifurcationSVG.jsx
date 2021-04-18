@@ -12,7 +12,7 @@ export default (props) => {
     height,
     width;
 
-  var width = props.width;
+  var width = props.width || document.body.clientWidth;
   var height = props.height;
 
   const setup = (p5, canvasParentRef) => {
