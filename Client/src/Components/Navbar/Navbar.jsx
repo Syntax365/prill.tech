@@ -19,7 +19,6 @@ class Navbar extends Component {
             id="web-name"
             style={{
               float: "left",
-              margin: "auto",
             }}
           >
             <a
@@ -47,7 +46,7 @@ class Navbar extends Component {
             </a>
           </div>
         </div>
-        <div
+        {/* <div
           id="nav-menu"
           className={"float-right"}
           style={{
@@ -55,7 +54,7 @@ class Navbar extends Component {
             paddingRight: "20px",
           }}
         >
-          {/* <div
+          <div
             style={{
               margin: "auto",
               position: "relative",
@@ -77,8 +76,8 @@ class Navbar extends Component {
                 </MenuItem>
               </MenuGroup>
             </DropDownMenu>
-          </div> */}
-        </div>
+          </div>
+        </div> */}
       </div>
     );
   }
