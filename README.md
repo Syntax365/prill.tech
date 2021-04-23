@@ -28,3 +28,9 @@ npm install react-scripts --save
 
 npm install --save react-p5
 https://www.npmjs.com/package/p5
+
+### Chakra UI with Framer Motion
+
+npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^4
+https://chakra-ui.com/docs/getting-started
+
