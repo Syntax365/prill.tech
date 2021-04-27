@@ -49,7 +49,7 @@ app.post("/send", function (req, res, next) {
     service: "gmail",
     auth: {
       user: "info.prilltech@gmail.com",
-      pass: "TP1304215;lkj56",
+      pass: "xxx",
     },
   });
 
